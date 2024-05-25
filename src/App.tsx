@@ -1,5 +1,7 @@
+import { Grid, GridItem } from "@chakra-ui/react";
 import "./App.css";
 import MainContainer from "./components/MainContainer";
+
 
 function App() {
   return (
@@ -10,6 +12,3 @@ function App() {
 }
 
 export default App;
-
-
-

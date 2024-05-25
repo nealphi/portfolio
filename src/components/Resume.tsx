@@ -16,11 +16,11 @@ import React from "react";
 const Resume = () => {
   return (
     <Grid templateColumns="repeat(3, 1fr)">
-      <GridItem colSpan={1}>1</GridItem>
+      <GridItem colSpan={1}>May 2021 - May 2024</GridItem>
       <GridItem colSpan={2}>
-        {" "}
+   
         <Text>
-          {" "}
+  
           Back in 2012, I decided to try my hand at creating custom Tumblr
           themes and tumbled head first into the rabbit hole of coding and web
           development. Fast-forward to today, and I’ve had the privilege of
