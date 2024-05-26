@@ -1,42 +1,37 @@
-import { defineStyleConfig } from '@chakra-ui/react'
+import { Box, Text } from "@chakra-ui/react";
 
-const Button = defineStyleConfig({
-  // The styles all button have in common
-  baseStyle: {
-    fontWeight: 'bold',
-    textTransform: 'uppercase',
-    borderRadius: 'base', // <-- border radius is same for all variants and sizes
-  },
-  // Two sizes: sm and md
-  sizes: {
-    sm: {
-      fontSize: 'sm',
-      px: 4, // <-- px is short for paddingLeft and paddingRight
-      py: 3, // <-- py is short for paddingTop and paddingBottom
-    },
-    md: {
-      fontSize: 'md',
-      px: 6, // <-- these values are tokens from the design system
-      py: 4, // <-- these values are tokens from the design system
-    },
-  },
-  // Two variants: outline and solid
-  variants: {
-    outline: {
-      border: '2px solid',
-      borderColor: 'purple.500',
-      color: 'purple.500',
-    },
-    solid: {
-      bg: 'purple.500',
-      color: 'white',
-    },
-  },
-  // The default size and variant values
-  defaultProps: {
-    size: 'md',
-    variant: 'outline',
-  },
-})
+interface Props {
+  children: string;
+  onClick: () => void;
+}
 
-export default Button
+const SimpleButton = ({ children, onClick }: Props) => {
+
+  return (
+    // Button from facebook.com
+
+    <Box
+      as="button"
+      width="130px"
+      height="30px"
+      transition="all 0.7s cubic-bezier(.08,.52,.52,1)"
+      borderRadius="5px"
+      fontSize="14px"
+      fontWeight="bold"
+      bg="#212C41"
+      color="#B6B6B6"
+      justifyContent="center"
+      _hover={{ color: "white", bg: "#006a67", w: "170px" }}
+      _active={{
+        bg: "gray",
+        transform: "scale(0.98)",
+        borderColor: "#bec3c9",
+      }}
+      onClick={() => onClick()}
+    >
+      {children}
+    </Box>
+  );
+};
+
+export default SimpleButton;

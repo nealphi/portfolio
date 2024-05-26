@@ -3,13 +3,13 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <Stack spacing={3}>
+    <Stack  spacing={3}>
     <Text fontSize="5xl" as="b">
       Negin Alipanahi
     </Text>
     <Text fontSize='2xl' as="b">Frontend Web Developer</Text>
     <Text>
-      I build clean, engaging, and accessible digital experiences.
+    A multipotentialite with an academic background and work experience in both Engineering and Applied Arts. I wander between the two, until I settle where Technology meets Art.
     </Text>
    
   </Stack>  )

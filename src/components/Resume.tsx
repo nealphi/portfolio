@@ -1,45 +1,43 @@
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Box,
   Grid,
   GridItem,
   HStack,
-  Hide,
-  SimpleGrid,
-  Stack,
+  Link,
   Tag,
-  TagCloseButton,
   TagLabel,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import { color } from "framer-motion";
 
-const Resume = () => {
+interface Props {
+  tags: string[];
+  date: string;
+  Heading: string;
+  SubHeading: string;
+  children: string;
+  href?: string;
+}
+
+const Resume = ({ tags, date, Heading, SubHeading, children, href }: Props) => {
   return (
-    <Grid templateColumns="repeat(3, 1fr)">
-      <GridItem colSpan={1}>May 2021 - May 2024</GridItem>
+    <Grid templateColumns="repeat(3, 1fr)" style={{borderRadius: "5px", padding:"20px"}} _hover={{backgroundColor: "#212C41"}} transition={"all 0.5s"}>
+      <GridItem style={{color: "#686E79" }} colSpan={1}>
+      <Text fontSize='sm' as="b">{date}</Text>
+      </GridItem>
       <GridItem colSpan={2}>
-   
-        <Text>
-  
-          Back in 2012, I decided to try my hand at creating custom Tumblr
-          themes and tumbled head first into the rabbit hole of coding and web
-          development. Fast-forward to today, and I’ve had the privilege of
-          building software for an advertising agency, a start-up, a huge
-          corporation, and a digital product studio. My main focus these days is
-          building accessible user interfaces for our customers at Klaviyo. I
-          most enjoy building software in the sweet spot where design and
-          engineering meet — things that look good but are also built well under
-          the hood. In my free time, I've also released an online video course
-          that covers everything you need to know to build a web app with the
-          Spotify API. When I’m not at the computer, I’m usually rock climbing,
-          reading, hanging out with my wife and two cats, or running around
-          Hyrule searching for Korok seeds K o r o k s e e d s .
-        </Text>
-        <HStack spacing={4}>
-          <Tag borderRadius="full" variant="solid" colorScheme="green">
-            <TagLabel>Green</TagLabel>
-            <TagCloseButton />
-          </Tag>
+        { href !== undefined ? <Link href={href} isExternal _hover={{color: "white"}} fontWeight={"bold"} >{Heading}<ExternalLinkIcon mx='2px' /></Link>
+        : <Text as={"b"} >{Heading}</Text> }
+        <Text fontSize='sm' >{SubHeading}</Text>
+        <Text style={{color: "#686E79" }} >{children}</Text>
+        <HStack spacing={2} display={"flex"} flexWrap={"wrap"} >
+         {tags.map((t) => (
+            <Tag size={"sm"} py={1}  borderRadius="full" variant="solid" bg="#006a67">
+              <TagLabel>{t}</TagLabel>
+            </Tag>
+          ))}
+         
         </HStack>
       </GridItem>
     </Grid>
