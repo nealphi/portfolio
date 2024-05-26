@@ -1,24 +1,29 @@
-import { Hide, Show, Stack, Text } from "@chakra-ui/react";
+import { Hide, Stack, Text } from "@chakra-ui/react";
 
 const About = () => (
-  <Stack mb={40}>
+  <Stack mb={"5"}>
     <Hide above="md">
       <Text> About </Text>
     </Hide>
     <Text>
-      Back in 2012, I decided to try my hand at creating custom Tumblr themes
-      and tumbled head first into the rabbit hole of coding and web development.
-      Fast-forward to today, and I’ve had the privilege of building software for
-      an advertising agency, a start-up, a huge corporation, and a digital
-      product studio. My main focus these days is building accessible user
-      interfaces for our customers at Klaviyo. I most enjoy building software in
-      the sweet spot where design and engineering meet — things that look good
-      but are also built well under the hood. In my free time, I've also
-      released an online video course that covers everything you need to know to
-      build a web app with the Spotify API. When I’m not at the computer, I’m
-      usually rock climbing, reading, hanging out with my wife and two cats, or
-      running around Hyrule searching for Korok seeds K o r o k s e e d s .
-    </Text>
+      Back in 2020, during the COVID-19 pandemic, I decided to try my hand on
+      something highly engaging to survive the lockdown. My first foray into web
+      development was building a website for my small business using WordPress.
+      This project led me deep down the rabbit hole of coding and web
+      development, ending up working in a Tech company as a Frontend web
+      developer.
+      </Text>
+      <Text>
+        Having studied both Engineering and Applied Arts, I spent years
+        exploring both fields until I found my niche at the intersection of
+        Engineering and Design. Minimal on the surface yet maximal in
+        functionality, are the designs I most enjoy working on.
+      </Text>
+      <Text>
+        When I'm not at the computer, you can find me in my studio behind my
+        sewing machine, designing bags and apparel.
+      </Text>
+
   </Stack>
 );
 
