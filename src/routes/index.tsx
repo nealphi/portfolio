@@ -1,6 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import MainContainer from "../components/MainContainer";
-import About from "../components/About";
 import App from "../App";
 import PDFViewer from "../components/PDFViewer";
 
