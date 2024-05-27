@@ -1,4 +1,6 @@
-
+* {
+  box-sizing: border-box;
+}
 .cursor {
   width: 800px; /* Size of the flashlight effect */
   height: 800px; /* Size of the flashlight effect */
