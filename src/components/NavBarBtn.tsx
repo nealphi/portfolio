@@ -5,7 +5,7 @@ interface Props {
   onClick: (data: string) => void;
 }
 
-const NavBar = ({ onClick }: Props) => {
+const NavBarBtn = ({ onClick }: Props) => {
   return (
     <Stack w={40} gap={2}>
       <SimpleButton onClick={() => onClick("About")}>About</SimpleButton>
@@ -15,4 +15,4 @@ const NavBar = ({ onClick }: Props) => {
   );
 };
 
-export default NavBar;
+export default NavBarBtn;

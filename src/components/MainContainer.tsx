@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectLayout from "./ProjectLayout";
 import Skills from "./Skills";
-import Navbar from "./NavBar" 
-import NavBar from "./NavBar";
+import Navbar from "./NavBarBtn" 
+import NavBar from "./NavBarBtn";
 
 const MainContainer = () => {
   const [isSelectedBtn, setIsSelectedBtn] = useState("");
