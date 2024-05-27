@@ -1,7 +1,7 @@
 import { Hide, Stack, Text } from "@chakra-ui/react";
 
 const About = () => (
-  <Stack mb={"5"} fontSize={["sm", "md", "md", "lmd"]} color={"#a7a9ac"}>
+  <Stack mb={"5"} fontSize={["sm", "md", "md", "lmd"]} color={"#a7a9ac"} textAlign={{ base:"justify", md:"left" }}>
     <Text>
       Back in 2020, during the COVID-19 pandemic, I decided to try my hand on
       something highly engaging to survive the lockdown. My first foray into web
