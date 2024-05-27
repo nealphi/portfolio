@@ -2,13 +2,13 @@ import { Box, Grid, GridItem, Link, Text } from "@chakra-ui/react";
 import Header from "./Header";
 import About from "./About";
 import Resume from "./Resume";
-import NavBar from "./NavBar";
 import SocialMediaLinks from "./SocialMediaLinks";
 import { useEffect, useRef, useState } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectLayout from "./ProjectLayout";
 import Skills from "./Skills";
 import Animated from "./Animated";
+import NavBar from "./NavBar";
 
 const MainContainer = () => {
   const [isSelectedBtn, setIsSelectedBtn] = useState("");
@@ -58,7 +58,7 @@ const MainContainer = () => {
           </Box>
           <Box display={"flex"} h={100} mt={5}>
             <NavBar
-              onClick={(data) => {
+              onClick={(data: string) => {
                 onClick(data);
               }}
             />
