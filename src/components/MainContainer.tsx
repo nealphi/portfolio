@@ -3,7 +3,7 @@ import Header from "./Header";
 import About from "./About";
 import Resume from "./Resume";
 import SocialMediaLinks from "./SocialMediaLinks";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectLayout from "./ProjectLayout";
 import Skills from "./Skills";

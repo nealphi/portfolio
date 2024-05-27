@@ -6,7 +6,7 @@ interface SimpleButtonProps {
 }
 
 const SimpleButton = ({ children, onClick }: SimpleButtonProps) => {
-  return <Button onClick={onClick}>{children}</Button>;
+  return <Button onClick={() => onClick()}>{children}</Button>;
 };
 
 export default SimpleButton;
