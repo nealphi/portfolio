@@ -30,27 +30,31 @@ const MainContainer = () => {
 
   return (
     <Grid
-      templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)", xl: "repeat(2, 1fr)" }}
+      templateColumns={{
+        base: "repeat(1, 1fr)",
+        lg: "repeat(2, 1fr)",
+        xl: "repeat(2, 1fr)",
+      }}
       gap={6}
-      mx={{ base: "30",lg: "130", xl: "180" }}
-      my={{ base: "30",lg: "50", xl: "100" }}
+      mx={{ base: "30", lg: "130", xl: "180" }}
+      my={{ base: "30", lg: "50", xl: "100" }}
     >
-      <GridItem h={"700"} padding={"20px"} position={"relative"} >
+      <GridItem h={"700"} padding={"20px"} position={"relative"}>
         {/* <Animated /> */}
         <Box position={{ lg: "fixed" }}>
           <Box>
             <Header />
           </Box>
           <Box>
-          <Link
-          color={"#006a67"}
-          href="/resume"
-          isExternal
-          _hover={{ color: "#01afaa" }}
-          fontWeight={"bold"}
-        >
-          View Full Résumé <ExternalLinkIcon mx="2px" />
-        </Link>
+            <Link
+              color={"#006a67"}
+              href="/resume"
+              isExternal
+              _hover={{ color: "#01afaa" }}
+              fontWeight={"bold"}
+            >
+              View Full Résumé <ExternalLinkIcon mx="2px" />
+            </Link>
           </Box>
           <Box display={"flex"} h={100} mt={5}>
             <NavBar
@@ -60,7 +64,7 @@ const MainContainer = () => {
             />
           </Box>
           <Box>
-            <Skills/>
+            <Skills />
           </Box>
           <Box display={"flex"} h={100}>
             <SocialMediaLinks />
@@ -141,7 +145,12 @@ const MainContainer = () => {
         <ProjectLayout
           Heading={"Game-Hub Project"}
           children={
-            "A video game discovery web app that helps you find new and interesting games to play. With GameHub, you can search for games by platform, genre, and more. Built with vite.js, TypeScript and Chakra UI, using RAWG API for fetching the Games."
+            <Text>
+              A video game discovery web app that helps you find new and
+              interesting games to play. With GameHub, you can search for games
+              by platform, genre, and more. Built with vite.js, TypeScript and
+              Chakra UI, using RAWG API for fetching the Games.
+            </Text>
           }
           href="https://game-hub-liart-sigma.vercel.app/"
         />
@@ -157,9 +166,10 @@ const MainContainer = () => {
                 href="https://brittanychiang.com/#experience"
               >
                 Brittany Chiang
-              </Link> {" "}
+              </Link>{" "}
               portfolio design and coded in Visual Studio Code by me. Built with
-              vite.js and Chakra UI. Animated with Framer Motion and Deployed with Vercel.
+              vite.js and Chakra UI. Animated with Framer Motion and Deployed
+              with Vercel.
             </Text>
           }
           href=""
@@ -167,25 +177,20 @@ const MainContainer = () => {
         <ProjectLayout
           Heading={"To-Do-List Application"}
           children={
-            "An application for tracking your To-Do's with filtering option. Designed in Figma, coded with React and deployed with Vercel"
+            "An application for tracking your To-Do's with filtering option. Designed in Figma, coded with React and deployed with Vercel."
           }
           href="https://to-do-app-react-nealphis-projects.vercel.app/"
         />
-         <ProjectLayout
+        <ProjectLayout
           Heading={"Analog Clock Project"}
-          children={
-            "Coded and styled with vanilla JavaScript and CSS"
-          }
+          children={"Coded and styled with vanilla JavaScript and CSS."}
           href="https://github.com/nealphi/Clock"
         />
-          <ProjectLayout
+        <ProjectLayout
           Heading={"Coin Flip Project"}
-          children={
-            "Coded and styled with vanilla JavaScript and CSS"
-          }
+          children={"Coded and styled with vanilla JavaScript and CSS."}
           href="https://github.com/nealphi/Flip-a-Coin"
         />
-        
       </GridItem>
     </Grid>
   );

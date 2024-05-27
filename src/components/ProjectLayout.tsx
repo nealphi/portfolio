@@ -15,6 +15,7 @@ const ProjectLayout = ({ Heading, children, href }: Props) => {
             { href !== undefined ? <Link href={href} isExternal _hover={{color: "white"}} fontWeight={"bold"} >{Heading}<ExternalLinkIcon mx='3px' pb="2px" /></Link>
             : <Text as={"b"} >{Heading}</Text> }
             <Text mb={0} style={{color: "#686E79" }} >{children}</Text>
+
         </Stack>
       );
 }
