@@ -4,7 +4,7 @@ import React from 'react'
 const Header = () => {
   return (
     <Stack spacing={2}>
-    <Text fontSize="5xl" as="b">
+    <Text fontSize={["3xl", "4xl", "5xl"]} as="b">
       Negin Alipanahi
     </Text>
     <Text fontSize='xl' color={"#a7a9ac"}> Frontend Web Developer </Text>
