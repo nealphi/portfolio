@@ -7,6 +7,7 @@ import SocialMediaLinks from "./SocialMediaLinks";
 import { useEffect, useRef, useState } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectLayout from "./ProjectLayout";
+import Skills from "./Skills";
 
 const MainContainer = () => {
   const [isSelectedBtn, setIsSelectedBtn] = useState("");
@@ -33,7 +34,7 @@ const MainContainer = () => {
       mx={{ base: "30",lg: "130", xl: "180" }}
       my={{ base: "30",lg: "50", xl: "100" }}
     >
-      <GridItem h={"600"} padding={"20px"} >
+      <GridItem h={"600"} padding={"20px"} position={"relative"} >
         <Box position={{ lg: "fixed" }}>
           <Box>
             <Header />
@@ -49,14 +50,17 @@ const MainContainer = () => {
           View Full Résumé <ExternalLinkIcon mx="2px" />
         </Link>
           </Box>
-          <Box display={"flex"} h={250} alignItems={"center"}>
+          <Box display={"flex"} h={100} mt={5}>
             <NavBar
               onClick={(data) => {
                 onClick(data);
               }}
             />
           </Box>
-          <Box display={"flex"} h={100} alignItems={"end"}>
+          <Box>
+            <Skills/>
+          </Box>
+          <Box display={"flex"} h={100}>
             <SocialMediaLinks />
           </Box>
         </Box>
@@ -131,11 +135,11 @@ const MainContainer = () => {
             "Analyzing business and operational processes, preparing process charts, and designing equipment and plant layouts. Creating work breakdown structures, breaking the operational processes into activities, and performing time studies for different work cycles."
           }
         />
-        
+        <Box h={10}></Box>
         <ProjectLayout
           Heading={"Game-Hub Project"}
           children={
-            "A video game discovery web app that helps you find new and interesting games to play. With GameHub, you can search for games by platform, genre, and more. Built with vite.js and Chakra UI, using RAWG API for fetching the Games."
+            "A video game discovery web app that helps you find new and interesting games to play. With GameHub, you can search for games by platform, genre, and more. Built with vite.js, TypeScript and Chakra UI, using RAWG API for fetching the Games."
           }
           href="https://game-hub-liart-sigma.vercel.app/"
         />
@@ -164,6 +168,20 @@ const MainContainer = () => {
             "An application for tracking your To-Do's with filtering option. Designed in Figma, coded with React and deployed with Vercel"
           }
           href="https://to-do-app-react-nealphis-projects.vercel.app/"
+        />
+         <ProjectLayout
+          Heading={"Analog Clock Project"}
+          children={
+            "Coded and styled with vanilla JavaScript and CSS"
+          }
+          href="https://github.com/nealphi/Clock"
+        />
+          <ProjectLayout
+          Heading={"Coin Flip Project"}
+          children={
+            "Coded and styled with vanilla JavaScript and CSS"
+          }
+          href="https://github.com/nealphi/Flip-a-Coin"
         />
         
       </GridItem>
