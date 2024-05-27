@@ -30,7 +30,7 @@ const Resume = ({ tags, date, Heading, SubHeading, children, href }: Props) => {
         { href !== undefined ? <Link href={href} isExternal _hover={{color: "white"}} fontWeight={"bold"} >{Heading}<ExternalLinkIcon mx='3px' pb="2px" /></Link>
         : <Text as={"b"} >{Heading}</Text> }
         <Text fontSize='sm' >{SubHeading}</Text>
-        <Text fontSize={["xs", "sm", "md"]} textAlign={{ base:"justify", md:"left" }} style={{color: "#686E79" }} >{children}</Text>
+        <Text fontSize={["xs", "sm", "md"]}  style={{color: "#686E79" }} >{children}</Text>
         <HStack spacing={2} display={"flex"} flexWrap={"wrap"} >
          {tags.map((t) => (
             <Tag size={"sm"} py={1}  borderRadius="full" variant="solid" bg="#006a67">
