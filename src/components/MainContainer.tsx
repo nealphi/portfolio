@@ -5,6 +5,8 @@ import Resume from "./Resume";
 import NavBar from "./NavBar";
 import SocialMediaLinks from "./SocialMediaLinks";
 import { useEffect, useRef, useState } from "react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import ProjectLayout from "./ProjectLayout";
 
 const MainContainer = () => {
   const [isSelectedBtn, setIsSelectedBtn] = useState("");
@@ -17,7 +19,7 @@ const MainContainer = () => {
     if (isSelectedBtn === "About") {
       window.scrollTo(0, 0);
     } else if (isSelectedBtn === "Resume") window.scrollTo(400, 400);
-    else if (isSelectedBtn === "Projects") window.scrollTo(1000, 1000);
+    else if (isSelectedBtn === "Projects") window.scrollTo(2000, 2000);
   }, [isSelectedBtn]);
 
   useEffect(() => {
@@ -26,15 +28,26 @@ const MainContainer = () => {
 
   return (
     <Grid
-      templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
+      templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)", xl: "repeat(2, 1fr)" }}
       gap={6}
-      mx={{ base: "30", lg: "180" }}
-      my={{ base: "30", lg: "100" }}
+      mx={{ base: "30",lg: "130", xl: "180" }}
+      my={{ base: "30",lg: "50", xl: "100" }}
     >
-      <GridItem h={"600"}>
+      <GridItem h={"600"} padding={"20px"} >
         <Box position={{ lg: "fixed" }}>
-          <Box maxWidth={400} h={250}>
+          <Box>
             <Header />
+          </Box>
+          <Box>
+          <Link
+          color={"#006a67"}
+          href="/resume"
+          isExternal
+          _hover={{ color: "#01afaa" }}
+          fontWeight={"bold"}
+        >
+          View Full Résumé <ExternalLinkIcon mx="2px" />
+        </Link>
           </Box>
           <Box display={"flex"} h={250} alignItems={"center"}>
             <NavBar
@@ -118,22 +131,41 @@ const MainContainer = () => {
             "Analyzing business and operational processes, preparing process charts, and designing equipment and plant layouts. Creating work breakdown structures, breaking the operational processes into activities, and performing time studies for different work cycles."
           }
         />
-              <Link href="/resume">View Full Résumé </Link>
-
-        <Text fontSize="sm" color={"#686E79"} my={10}>
-          Inspired by{" "}
-          <Link
-            _hover={{
-              color: "#006a67",
-            }}
-            href="https://brittanychiang.com/#experience"
-          >
-            {" "}
-            Brittany Chiang
-          </Link>{" "}
-          portfolio design and coded in Visual Studio Code by me. Built with
-          vite.js and Chakra UI. Deployed with Vercel.
-        </Text>
+        
+        <ProjectLayout
+          Heading={"Game-Hub Project"}
+          children={
+            "A video game discovery web app that helps you find new and interesting games to play. With GameHub, you can search for games by platform, genre, and more. Built with vite.js and Chakra UI, using RAWG API for fetching the Games."
+          }
+          href="https://game-hub-liart-sigma.vercel.app/"
+        />
+        <ProjectLayout
+          Heading={"Portfolio Project"}
+          children={
+            <Text>
+              Inspired by{" "}
+              <Link
+                _hover={{
+                  color: "#006a67",
+                }}
+                href="https://brittanychiang.com/#experience"
+              >
+                Brittany Chiang
+              </Link> {" "}
+              portfolio design and coded in Visual Studio Code by me. Built with
+              vite.js and Chakra UI. Deployed with Vercel.
+            </Text>
+          }
+          href=""
+        />
+        <ProjectLayout
+          Heading={"To-Do-List Application"}
+          children={
+            "An application for tracking your To-Do's with filtering option. Designed in Figma, coded with React and deployed with Vercel"
+          }
+          href="https://to-do-app-react-nealphis-projects.vercel.app/"
+        />
+        
       </GridItem>
     </Grid>
   );

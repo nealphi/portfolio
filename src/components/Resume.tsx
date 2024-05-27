@@ -22,12 +22,12 @@ interface Props {
 
 const Resume = ({ tags, date, Heading, SubHeading, children, href }: Props) => {
   return (
-    <Grid templateColumns="repeat(3, 1fr)" style={{borderRadius: "5px", padding:"20px"}} _hover={{backgroundColor: "#212C41"}} transition={"all 0.5s"}>
+    <Grid templateColumns="repeat(3, 1fr)" gap={2} style={{borderRadius: "5px", padding: "15px"}}  _hover={{backgroundColor: "#212C41"}} transition={"all 0.5s"} >
       <GridItem style={{color: "#686E79" }} colSpan={1}>
-      <Text fontSize='sm' as="b">{date}</Text>
+      <Text fontSize={'xs'} as="b">{date}</Text>
       </GridItem>
       <GridItem colSpan={2}>
-        { href !== undefined ? <Link href={href} isExternal _hover={{color: "white"}} fontWeight={"bold"} >{Heading}<ExternalLinkIcon mx='2px' /></Link>
+        { href !== undefined ? <Link href={href} isExternal _hover={{color: "white"}} fontWeight={"bold"} >{Heading}<ExternalLinkIcon mx='3px' pb="2px" /></Link>
         : <Text as={"b"} >{Heading}</Text> }
         <Text fontSize='sm' >{SubHeading}</Text>
         <Text style={{color: "#686E79" }} >{children}</Text>
