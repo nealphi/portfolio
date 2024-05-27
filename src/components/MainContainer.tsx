@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectLayout from "./ProjectLayout";
 import Skills from "./Skills";
+import Navbar from "./NavBar" 
 import NavBar from "./NavBar";
 
 const MainContainer = () => {
@@ -56,11 +57,9 @@ const MainContainer = () => {
             </Link>
           </Box>
           <Box display={"flex"} h={100} mt={5}>
-            <NavBar
-              onClick={(data: string) => {
+            <NavBar onClick={(data: string) => {
                 onClick(data);
-              }}
-            />
+              }} />
           </Box>
           <Box>
             <Skills />
