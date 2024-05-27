@@ -36,10 +36,10 @@ const MainContainer = () => {
         xl: "repeat(2, 1fr)",
       }}
       gap={6}
-      mx={{ base: "30", lg: "130", xl: "180" }}
+      mx={{ base: "0", lg: "130", xl: "180" }}
       my={{ base: "30", lg: "50", xl: "100" }}
     >
-      <GridItem h={"700"} padding={"20px"} position={"relative"}>
+      <GridItem h={"700"} display={"flex"} padding={"20px"} position={"relative"}>
         {/* <Animated /> */}
         <Box position={{ lg: "fixed" }}>
           <Box>
