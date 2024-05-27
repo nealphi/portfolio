@@ -4,12 +4,13 @@ import SimpleButton from "./SimpleButton";
 interface Props {
   onClick: (data: string) => void;
 }
-const NavBar = ({ onClick }:Props) => {
+
+const NavBar = ({ onClick }: Props) => {
   return (
-    <Stack w={40} gap={2} >
-      <SimpleButton children={"About"} onClick={() => onClick("About")} />
-      <SimpleButton children={"Resume"} onClick={() => onClick("Resume")} />
-      <SimpleButton children={"Projects"} onClick={() => onClick("Projects")} />
+    <Stack w={40} gap={2}>
+      <SimpleButton onClick={() => onClick("About")}>About</SimpleButton>
+      <SimpleButton onClick={() => onClick("Resume")}>Resume</SimpleButton>
+      <SimpleButton onClick={() => onClick("Projects")}>Projects</SimpleButton>
     </Stack>
   );
 };
