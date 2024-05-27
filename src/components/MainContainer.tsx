@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectLayout from "./ProjectLayout";
 import Skills from "./Skills";
+import Animated from "./Animated";
 import NavBar from "./NavBar";
 
 const MainContainer = () => {
