@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Link, Text } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Hide, Link, Show, Text } from "@chakra-ui/react";
 import Header from "./Header";
 import About from "./About";
 import Resume from "./Resume";
@@ -8,7 +8,6 @@ import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectLayout from "./ProjectLayout";
 import Skills from "./Skills";
 import NavBarBtn from "./NavBarBtn";
-
 
 const MainContainer = () => {
   const [isSelectedBtn, setIsSelectedBtn] = useState("");
@@ -39,7 +38,12 @@ const MainContainer = () => {
       mx={{ base: "0", lg: "130", xl: "180" }}
       my={{ base: "30", lg: "50", xl: "100" }}
     >
-      <GridItem h={"700"} display={"flex"} padding={"20px"} position={"relative"}>
+      <GridItem
+        h={["600","700"]}
+        display={"flex"}
+        padding={"20px"}
+        position={"relative"}
+      >
         {/* <Animated /> */}
         <Box position={{ lg: "fixed" }}>
           <Box>
@@ -57,19 +61,35 @@ const MainContainer = () => {
             </Link>
           </Box>
           <Box display={"flex"} h={100} mt={5}>
-              <NavBarBtn onClick={(data: string) => {
+            <NavBarBtn
+              onClick={(data: string) => {
                 onClick(data);
-              }}/>
+              }}
+            />
           </Box>
           <Box>
             <Skills />
           </Box>
-          <Box display={"flex"} h={100}>
-            <SocialMediaLinks />
-          </Box>
+          <Hide below="lg">
+            <Box h={100} mt={5}>
+              <SocialMediaLinks />
+            </Box>
+          </Hide>
+         
         </Box>
       </GridItem>
       <GridItem display={"flex"} flexDirection={"column"} p={5}>
+      <Hide above="md">
+            <Text
+              style={{ display: "flex", alignItems: "center" }}
+              fontSize={"md"}
+              as={"b"}
+              mb={3}
+              color={"#a7a9ac"}
+            >
+              ABOUT
+            </Text>
+          </Hide>
         <About />
         <Resume
           tags={[
@@ -190,6 +210,13 @@ const MainContainer = () => {
           href="https://github.com/nealphi/Flip-a-Coin"
         />
       </GridItem>
+
+      <Hide above="md">
+            <Box display={"flex"} justifyContent={"center"} h={100} mt={5}>
+              <SocialMediaLinks />
+            </Box>
+          </Hide>
+
     </Grid>
   );
 };
