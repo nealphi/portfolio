@@ -1,14 +1,13 @@
 import { Box, Grid, GridItem, Link, Text } from "@chakra-ui/react";
-import Header from "./components/Header";
-import About from "./components/About";
-import Resume from "./components/Resume";
-import SocialMediaLinks from "./components/SocialMediaLinks";
+import Header from "./Header";
+import About from "./About";
+import Resume from "./Resume";
+import SocialMediaLinks from "./SocialMediaLinks";
 import { useEffect, useState } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import ProjectLayout from "./components/ProjectLayout";
-import Skills from "./components/Skills";
-import Animated from "./components/Animated";
-import NavBar from "./components/NavBar";
+import ProjectLayout from "./ProjectLayout";
+import Skills from "./Skills";
+import NavBar from "./NavBar";
 
 const MainContainer = () => {
   const [isSelectedBtn, setIsSelectedBtn] = useState("");
