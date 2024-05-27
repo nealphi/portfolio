@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectLayout from "./ProjectLayout";
 import Skills from "./Skills";
+import Animated from "./Animated";
 
 const MainContainer = () => {
   const [isSelectedBtn, setIsSelectedBtn] = useState("");
@@ -34,7 +35,8 @@ const MainContainer = () => {
       mx={{ base: "30",lg: "130", xl: "180" }}
       my={{ base: "30",lg: "50", xl: "100" }}
     >
-      <GridItem h={"600"} padding={"20px"} position={"relative"} >
+      <GridItem h={"700"} padding={"20px"} position={"relative"} >
+        {/* <Animated /> */}
         <Box position={{ lg: "fixed" }}>
           <Box>
             <Header />
@@ -157,7 +159,7 @@ const MainContainer = () => {
                 Brittany Chiang
               </Link> {" "}
               portfolio design and coded in Visual Studio Code by me. Built with
-              vite.js and Chakra UI. Deployed with Vercel.
+              vite.js and Chakra UI. Animated with Framer Motion and Deployed with Vercel.
             </Text>
           }
           href=""
