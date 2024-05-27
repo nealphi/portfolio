@@ -5,7 +5,6 @@ import PDFViewer from "../components/PDFViewer";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
   },
   {
     path: "/resume",
