@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import MainContainer from "../components/MainContainer";
+import MainContainer from "../MainContainer";
 import About from "../components/About";
 import App from "../App";
 import PDFViewer from "../components/PDFViewer";
@@ -12,7 +12,6 @@ const router = createBrowserRouter([
   {
     path: "/resume",
     element: <PDFViewer />,
-
   },
 ]);
 
