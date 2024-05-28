@@ -2,7 +2,7 @@ const PDFViewer = () => {
   return (
     <div>
       <iframe
-        src="./public/NeginAlipanahi.pdf"
+        src="./NeginAlipanahi.pdf"
         width={"100%"}
         height={"2000"}
       />

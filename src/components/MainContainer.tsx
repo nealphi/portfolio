@@ -72,7 +72,7 @@ const MainContainer = () => {
           <Box>
             <Link
               color={"#006a67"}
-              href="/resume"
+              href="/NeginAlipanahi.pdf"
               isExternal
               _hover={{ color: "#01afaa" }}
               fontWeight={"bold"}
