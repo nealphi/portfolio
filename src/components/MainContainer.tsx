@@ -13,7 +13,7 @@ const MainContainer = () => {
   const onClick = (data: string): void => {
     setIsSelectedBtn(data);
   };
-  const [isSelectedBtn, setIsSelectedBtn] = useState("");
+  const [isSelectedBtn, setIsSelectedBtn] = useState("About");
   const aboutRef = useRef(null);
   const resumeRef = useRef(null);
   const projectsRef = useRef(null);
@@ -42,9 +42,7 @@ const MainContainer = () => {
       scrollToRef(projectsRef);
     }
 
-    if (isSelectedBtn) {
-      setIsSelectedBtn("");
-    }
+   
   }, [isSelectedBtn]);
 
   return (
