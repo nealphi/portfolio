@@ -2,7 +2,7 @@
 const PDFViewer = () => {
  return (
  <div>
- <iframe className="lazy player-ratio" src='public/Frontend developer - Negin Alipanahi.pdf' width={"100%"} height={"2000"}/>
+ <iframe className="lazy player-ratio" src='/Users/negin/portfolio/public/FrontendDeveloper_NeginAlipanahi.pdf' width={"100%"} height={"2000"}/>
  </div>
  );
 };
