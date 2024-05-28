@@ -3,29 +3,49 @@ import Header from "./Header";
 import About from "./About";
 import Resume from "./Resume";
 import SocialMediaLinks from "./SocialMediaLinks";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import ProjectLayout from "./ProjectLayout";
 import Skills from "./Skills";
 import NavBarBtn from "./NavBarBtn";
 
 const MainContainer = () => {
-  const [isSelectedBtn, setIsSelectedBtn] = useState("");
   const onClick = (data: string): void => {
     setIsSelectedBtn(data);
   };
+  const [isSelectedBtn, setIsSelectedBtn] = useState("");
+  const aboutRef = useRef(null);
+  const resumeRef = useRef(null);
+  const projectsRef = useRef(null);
 
   useEffect(() => {
-    setIsSelectedBtn("");
+    const getBodyMarginTop = () => {
+      const bodyStyle = window.getComputedStyle(document.body);
+      return parseInt(bodyStyle.marginTop) || 0;
+    };
+
+    const scrollToRef = (ref:any) => {
+      if (ref && ref.current) {
+        const bodyMarginTop = getBodyMarginTop();
+        window.scrollTo({
+          top: ref.current.offsetTop + bodyMarginTop,
+          behavior: "smooth",
+        });
+      }
+    };
+
     if (isSelectedBtn === "About") {
-      window.scrollTo(0, 0);
-    } else if (isSelectedBtn === "Resume") window.scrollTo(400, 400);
-    else if (isSelectedBtn === "Projects") window.scrollTo(2000, 2000);
-  }, [isSelectedBtn]);
+      scrollToRef(aboutRef);
+    } else if (isSelectedBtn === "Resume") {
+      scrollToRef(resumeRef);
+    } else if (isSelectedBtn === "Projects") {
+      scrollToRef(projectsRef);
+    }
 
-  useEffect(() => {
-    setIsSelectedBtn("About");
-  }, []);
+    if (isSelectedBtn) {
+      setIsSelectedBtn("");
+    }
+  }, [isSelectedBtn]);
 
   return (
     <Grid
@@ -35,11 +55,11 @@ const MainContainer = () => {
         xl: "repeat(2, 1fr)",
       }}
       gap={6}
-      mx={{ base: "0", lg: "130", xl: "180" }}
-      my={{ base: "30", lg: "50", xl: "100" }}
+      // mx={{ base: "0", lg: "130", xl: "180" }}
+      // my={{ base: "30", lg: "50", xl: "100" }}
     >
       <GridItem
-        h={["600","700"]}
+        h={["600", "700"]}
         display={"flex"}
         padding={"20px"}
         position={"relative"}
@@ -75,22 +95,23 @@ const MainContainer = () => {
               <SocialMediaLinks />
             </Box>
           </Hide>
-         
         </Box>
       </GridItem>
       <GridItem display={"flex"} flexDirection={"column"} p={5}>
-      <Hide above="md">
-            <Text
-              style={{ display: "flex", alignItems: "center" }}
-              fontSize={"md"}
-              as={"b"}
-              mb={3}
-              color={"#a7a9ac"}
-            >
-              ABOUT
-            </Text>
-          </Hide>
+      <div ref={aboutRef}></div>
+        <Hide above="md">
+          <Text
+            style={{ display: "flex", alignItems: "center" }}
+            fontSize={"md"}
+            as={"b"}
+            mb={3}
+            color={"#a7a9ac"}
+          >
+            ABOUT
+          </Text>
+        </Hide>
         <About />
+        <div ref={resumeRef}></div>
         <Resume
           tags={[
             "React.js",
@@ -160,6 +181,7 @@ const MainContainer = () => {
           }
         />
         <Box h={10}></Box>
+        <div ref={projectsRef}></div>
         <ProjectLayout
           Heading={"Game-Hub Project"}
           children={
@@ -210,13 +232,11 @@ const MainContainer = () => {
           href="https://github.com/nealphi/Flip-a-Coin"
         />
       </GridItem>
-
       <Hide above="md">
-            <Box display={"flex"} justifyContent={"center"} h={100} mt={5}>
-              <SocialMediaLinks />
-            </Box>
-          </Hide>
-
+        <Box display={"flex"} justifyContent={"center"} h={100} mt={5}>
+          <SocialMediaLinks />
+        </Box>
+      </Hide>
     </Grid>
   );
 };
