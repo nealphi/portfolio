@@ -13,7 +13,8 @@ const MainContainer = () => {
   const onClick = (data: string): void => {
     setIsSelectedBtn(data);
   };
-  const [isSelectedBtn, setIsSelectedBtn] = useState("About");
+  const [isSelectedBtn, setIsSelectedBtn] = useState("main");
+  const mainRef = useRef(null);
   const aboutRef = useRef(null);
   const resumeRef = useRef(null);
   const projectsRef = useRef(null);
@@ -34,7 +35,9 @@ const MainContainer = () => {
       }
     };
 
-    if (isSelectedBtn === "About") {
+    if (isSelectedBtn === "main") {
+      scrollToRef(mainRef);
+    } else if (isSelectedBtn === "About") {
       scrollToRef(aboutRef);
     } else if (isSelectedBtn === "Resume") {
       scrollToRef(resumeRef);
@@ -53,8 +56,7 @@ const MainContainer = () => {
         xl: "repeat(2, 1fr)",
       }}
       gap={6}
-      // mx={{ base: "0", lg: "130", xl: "180" }}
-      // my={{ base: "30", lg: "50", xl: "100" }}
+      ref={mainRef}
     >
       <GridItem
         h={["600", "700"]}
