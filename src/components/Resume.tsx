@@ -24,7 +24,7 @@ const Resume = ({ tags, date, Heading, SubHeading, children, href }: Props) => {
   return (
     <Grid templateColumns="repeat(3, 1fr)" gap={2} style={{borderRadius: "5px", padding: "15px"}}  _hover={{backgroundColor: "#212C41"}} transition={"all 0.5s"} >
       <GridItem style={{color: "#686E79" }} colSpan={1}>
-      <Text fontSize={'xs'} as="b">{date}</Text>
+      <Text fontSize={["2xs", "xs"]} as="b">{date}</Text>
       </GridItem>
       <GridItem colSpan={2}>
         { href !== undefined ? <Link href={href} isExternal _hover={{color: "white"}} fontWeight={"bold"} >{Heading}<ExternalLinkIcon mx='3px' pb="2px" /></Link>
